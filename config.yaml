@@ -1,0 +1,16 @@
+baseurl: "http://www.ahri.net/"
+languageCode: "en-gb"
+title: "devpaint"
+theme: "hyde"
+
+params:
+  description: "It's those stripping our freedoms that are the real terrorists; Politicians and the corporations and corruption behind them. Militants are trivial, transient and ineffective. The loss of freedom and privacy is scarier than any bomb."
+  disqusShortname: "devpaint"
+  themeColor: "theme-base-0d"
+
+permalinks:
+    post: "/:year/:month/:title/"
+
+taxonomies:
+  tag: "tags"
+  category: "categories"
