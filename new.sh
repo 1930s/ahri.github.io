@@ -124,6 +124,7 @@ description: ""
 date: "$datetime"
 categories: ["$category"]
 tags: `echo $tags | expand_list`
+draft: true
 ---
 EOF
 
