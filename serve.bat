@@ -1,3 +1,3 @@
 @echo off
 
-hugo\windows.exe server -w
+hugo\windows.exe server --watch=true --buildDrafts=true
