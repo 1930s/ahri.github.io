@@ -30,19 +30,15 @@ normalize()
 {
     awk -F',' "
     {
-        sub(/^.*[:=] */, \"\");
-        sub(/^\[/, \"\");
-        sub(/\]$/, \"\");
-        sub(/^\"/, \"\");
-        sub(/\"$/, \"\");
-        gsub(/\", *\"/, \"\");
+        sub(/.*\\[/, \"\");
+        sub(/\\].*/, \"\");
     }
 
     NF > 0 {
         for (i=1; i<=NF; i++) {
             print \$i;
         }
-    }" | tr '[:upper:]' '[:lower:]' | sort -u | tr "\n" "," | sed 's/,$//;s/,/, /g'
+    }" | sed 's,^ ,,;s,",,g' | tr '[:upper:]' '[:lower:]' | sort -u | tr "\n" "," | sed 's/,$//;s/,/, /g'
 }
 
 expand_list()
